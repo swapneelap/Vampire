@@ -1,0 +1,61 @@
+#------------------------------------------
+# Sample vampire input file to perform
+# benchmark calculation for v4.0
+#
+#------------------------------------------
+
+#------------------------------------------
+# Creation attributes:
+#------------------------------------------
+create:crystal-structure=sc
+create:select-material-by-geometry
+#create:periodic-boundaries-x
+#create:periodic-boundaries-y
+#------------------------------------------
+# System Dimensions:
+#------------------------------------------
+#dimensions:unit-cell-size = 3.4 !A
+dimensions:system-size-x = 2000 !A
+dimensions:system-size-y = 2000 !A
+dimensions:system-size-z = 200 !A
+
+#------------------------------------------
+# Material Files:
+#------------------------------------------
+material:file=Co.mat
+#material:geometry-file=mat.geo
+#material:unit-cell-file=BN.ucf
+
+#------------------------------------------
+# Simulation attributes:
+#------------------------------------------
+sim:temperature=300
+#sim:equilibration-time-steps=10000
+sim:loop-time-steps=500
+#sim:applied-field-unit-vector=1,0,0
+#sim:minimum-applied-field-strength=-2.3
+#sim:maximum-applied-field-strength=2.3
+#sim:applied-field-strength-increment=0.1
+sim:time-steps-increment=1
+sim:total-time-steps=1000
+sim:time-step=1.0E-15
+
+#------------------------------------------
+# Program and integrator details
+#------------------------------------------
+#sim:program=hysteresis-loop
+sim:integrator=llg-heun
+
+#------------------------------------------
+# data output
+#------------------------------------------
+#output:real-time
+#output:temperature
+#output:magnetisation
+#output:applied-field-strength
+#output:magnetisation-length
+#output:output-rate = 1000
+config:atoms
+screen:time-steps
+screen:magnetisation
+#screen:applied-field-strength
